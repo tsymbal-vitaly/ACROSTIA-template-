@@ -1,0 +1,192 @@
+//    team start
+
+.bg-about {
+    position: relative;
+    background-color: $rose_quartz-dark;
+    color: $white;
+    
+    &::before {
+        @include section-before;
+        background-size: cover;
+        background-position: center;
+        top: 0;
+        left: 0;
+        background-image: url('../img/overlay-team.png');
+        
+        @media screen and (max-width: $break_sm){
+            content: none;
+        }
+    }
+    
+    .title {
+        
+        h2 {margin: 8px 0 22px;}
+    }
+    
+    .description {
+        
+        p {margin: 0 0 53px; color: #e6d1e3;}
+    }
+    
+    .center-block {
+        display: inline-block;
+        background-color: $pistachio;
+        padding: 0 42px;
+        border-radius: 5px;
+        position: relative;
+        margin-bottom: 60px;
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -30px;
+            margin-left: -17px;
+            border: 15px solid transparent;
+            border-top: 15px solid $pistachio;
+        }
+
+        h3 {
+            font-size: 25px;
+            font-weight: 900;
+            line-height: 50px;
+            letter-spacing: -0.2px;
+            text-transform: uppercase;
+            
+            @media screen and (max-width: $break_sm){
+                font-size: 20px;
+            }
+        }
+    }
+    
+    .row {
+        @include row-flex();
+        margin-bottom: 53px;
+        position: relative;
+        z-index: 20;
+        
+        .col {
+            display: flex;
+            @include col-3();
+            @include col-lg-6();
+            @include col-sm-12();
+            background-color: rgba($purple-taupe,0.4);
+            transition: $transition;
+            border-radius: 4px;
+            margin: 10px;
+            
+            &:hover {background-color: rgba($purple-taupe,0.8);}
+        
+            &:hover .icon-wrap {border-color: $red;}
+            
+            &:hover .subtitle h4 {color: $white;}
+            
+            &:hover .job h6 {color: $red;}
+            
+            &:hover .social li {
+                
+                &:nth-child(1) a {background-color: $facebook;}
+
+                &:nth-child(2) a {background-color: $twitter;}
+
+                &:nth-child(3) a {background-color: $google;}
+
+                &:nth-child(4) a {background-color: $linkedIn;}
+            }
+            
+            &:hover .icon-wrap div {
+                background-position: -5px -160px;
+            }
+        }
+    }
+    
+    .block {
+        display: flex;
+        @include flex-wrap(wrap);
+        @include flex-direction(column);
+        @include align-items(center);
+        width: 100%;
+        padding: 44px 30px 22px;
+        box-sizing: border-box;
+        border-radius: 4px;
+    }
+    
+    .icon-wrap {
+        width: 152px;
+        height: 152px;
+        background-color: $white;
+        border-radius: 50%;
+        border: 5px solid $rose_quartz;
+        margin-bottom: 20px;
+        overflow: hidden;
+
+        div {
+            width: 147px;
+            height: 147px;
+            border-radius: 50%;
+            border: 3px solid $white;
+            background: url('../img/sprite-user.png') no-repeat;
+            background-position: -5px 0;
+        }
+    }
+    
+    .subtitle {
+        
+        h4 {
+            color: $rose_quartz-light;
+            font-size: 25px;
+            font-weight: 900;
+            line-height: 35px;
+            text-transform: uppercase;
+            transition: $transition;
+        }
+    }
+    
+    .job {
+        margin-bottom: 34px;
+        
+        h6 {
+            color: $light-pistachio;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 22px;
+            transition: $transition;
+        }
+    }
+    
+    .social {
+        @include row-flex();
+        @include justify-content(center);
+        @include align-items(center);
+        margin-bottom: 10px;
+        
+        li {
+            margin: 0 20px 0;
+            
+            &:nth-child(1) a:hover{background-color: $facebook;}
+
+            &:nth-child(2) a:hover{background-color: $twitter;}
+
+            &:nth-child(3) a:hover{background-color: $google;}
+
+            &:nth-child(4) a:hover{background-color: $linkedIn;}
+            
+            a {
+                @include row-flex();
+                @include justify-content(center);
+                @include align-items(center);
+                width: 30px;
+                height: 30px;
+                line-height: 32px;
+                color: $white;
+                background-color: $rose_quartz;
+                text-decoration: none;
+                border-radius: 100%;
+                transition: $transition;
+
+            }
+        }
+    }
+}
+
+//    team end

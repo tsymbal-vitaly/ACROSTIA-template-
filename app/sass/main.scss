@@ -1,0 +1,76 @@
+@import"app/libs/smart-grid/smart-grid.scss";
+@import"variables";
+
+@include reset();
+
+body {
+    font-family: $font-family-base;
+    font-size: 16px;
+    font-weight: 400;
+    background-color: $white;
+    height: 100%;
+}
+.container {
+    @include wrapper();
+    box-sizing: border-box;
+}
+.infoblock {
+    padding: 185px 0 50px;
+    text-align: center;
+    
+    @media screen and (max-width: $break_sm){
+        padding: 120px 0 50px;
+    }
+    
+    .title {
+        position: relative;
+        z-index: 20;
+        
+        h2 {
+            font-size: 60px;
+            font-weight: 300;
+            line-height: 58px;
+            text-transform: uppercase;
+            
+            @media screen and (max-width: $break_sm){
+                font-size: 35px;
+                line-height: 35px;
+            }
+        }
+    }
+    
+    .description {
+        position: relative;
+        z-index: 20;
+        
+        h5 {
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 58px;
+            text-transform: uppercase;
+            letter-spacing: 0.1px;
+            
+            @media screen and (max-width: $break_sm){
+                font-size: 16px;
+                line-height: 25px;
+                margin-bottom: 15px;
+            }
+        }
+        
+        p {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 24px;
+            margin: -3px 0 0;
+            letter-spacing: 0.1px;
+        }
+    }
+}
+
+@import"header";
+@import"carousel-vision";
+@import"services";
+@import"about";
+@import"work";
+@import"contacts";
+@import"footer";

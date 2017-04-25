@@ -1,0 +1,180 @@
+//    work start
+
+.bg-work {
+    position: relative;
+    background-color: $pistachio;
+    color: $white;
+    
+    &::before {
+        @include section-before;
+        background-size: cover;
+        background-position: center;
+        top: 0;
+        left: 0;
+        background-image: url('../img/overlay-work.png');
+        
+        @media screen and (max-width: $break_sm){
+            content: none;
+        }
+    }
+    
+    .title {
+        
+        h2 {line-height: 70px; margin-bottom: 20px;}
+    }
+    
+    .description {
+        
+        p {margin-bottom: 53px;}
+    }
+}
+
+.wrap-tabs {
+    @include row-flex();
+    @include justify-content(space-between);
+    @include align-items(center);
+    border-top: 1px solid $light-pistachio;
+    position: relative;
+    z-index: 20;
+    
+    @media screen and (max-width: $break_sm){
+        @include flex-direction(column);
+    }
+
+    .active {background-color: $sunglow; cursor: default!important;}
+}
+
+.title-tabs {
+    margin: 0 0 0 28px;
+    
+    @media screen and (max-width: $break_sm){
+        margin: 0;
+    }
+
+    h3 {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 24px;
+        text-transform: uppercase;
+        letter-spacing: 0.2px;
+        
+        @media screen and (max-width: $break_sm){
+            margin: 10px 0 0;
+        }
+    }
+}
+
+.tabs {
+    margin: 0 27px 0 0;
+    padding: 37px 0;
+    
+    @media screen and (max-width: $break_sm){
+        margin: 0;
+        padding: 20px 0;
+    }
+    
+    @media screen and (max-width: $break_xs){
+        width: 100%;
+        @include row-flex();
+        @include flex-direction(column);
+        padding: 20px 0 10px;
+    }
+
+    .tab + .tab {
+        margin-left: 30px;
+        
+        @media screen and (max-width: $break_xs){
+            margin-left: 0;
+        } 
+    }
+
+    .tab {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 24px;
+        letter-spacing: 0.1px;
+        padding: 5px 10px 10px;
+        border-radius: 4px;
+        cursor: pointer;
+        
+        @media screen and (max-width: $break_xs){
+            margin: 5px 0;
+        } 
+    }
+}
+
+.tab-content {
+    border-top: 1px solid $light-pistachio;
+}
+
+.tab-item {
+    @include row-flex();
+    @include justify-content(center);
+    padding: 38px 0 47px 0;
+    width: 100%;
+
+    .col {
+        border-radius: 4px;
+        overflow: hidden;
+        margin: 10px;
+        
+        &:hover .overlay {
+                display: block;
+            }
+
+        a {
+            display: block;
+            position: relative;
+            text-decoration: none;
+            outline: none;
+        }
+    }
+}
+
+.title-img {
+    position: relative;
+    background-color: $white;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: 49px;
+        margin-left: -20px;
+        border: 20px solid transparent;
+        border-bottom: 20px solid $white;
+    }
+
+    h5 {
+        color: $gray;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 49px;
+        text-transform: uppercase;
+        margin: -3px 0 0 0;
+    }
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: none;
+    background-image: url('../img/zoom-icon.png');
+    background-repeat: no-repeat;
+    background-position: 50% 40%;
+    background-color: rgba($black,0.4);
+}
+
+.mfp-figure small {
+    display: none;
+}
+
+.mfp-zoom-out-cur, 
+.mfp-zoom-out-cur .mfp-image-holder .mfp-close {
+    cursor: pointer;
+}
+
+//    work end

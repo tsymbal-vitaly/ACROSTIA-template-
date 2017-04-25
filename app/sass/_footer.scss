@@ -1,0 +1,58 @@
+//    footer start
+
+#footer {
+    background-color: $verdigris-dark;
+    padding: 40px 0;
+    
+    .footer-social {
+        @include row-flex();
+        @include justify-content(center);
+        @include align-items(center);
+        
+        li {
+            margin: 0 30px 0;
+            
+            @media screen and (max-width: $break_sm){
+                margin: 0 20px 0;
+            }
+            
+            &:nth-child(1) a:hover{background-color: $facebook;}
+
+            &:nth-child(2) a:hover{background-color: $twitter;}
+
+            &:nth-child(3) a:hover{background-color: $google;}
+
+            &:nth-child(4) a:hover{background-color: $linkedIn;}
+            
+            a {
+                @include row-flex();
+                @include justify-content(center);
+                @include align-items(center);
+                width: 60px;
+                height: 60px;
+                line-height: 32px;
+                color: $white;
+                background-color: $verdigris;
+                text-decoration: none;
+                border-radius: 100%;
+                transition: $transition;
+                
+                @media screen and (max-width: $break_sm){
+                    width: 40px;
+                    height: 40px;
+                }
+                
+                i {
+                    font-size: 30px;
+                
+                    @media screen and (max-width: $break_sm){
+                        font-size: 16px;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+//    footer end
