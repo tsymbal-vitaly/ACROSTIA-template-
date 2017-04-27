@@ -47,7 +47,9 @@
             h3 {
                 font-size: 3vw;
                 font-weight: 300;
-                line-height: 58px;
+                line-height: 50px;
+                letter-spacing: 1px;
+                word-spacing: 4px;
                 text-transform: uppercase;
                 
                 @media screen and (max-width: $break_lg){
@@ -68,14 +70,15 @@
 
         .text-right {
             h1 {
-                font-size: 8.5vw;
-                font-weight: 900;
-                line-height: 114px;
+                font-size: 7.5vw;
+                font-weight: 800;
+                line-height: 100px;
                 text-transform: uppercase;
                 letter-spacing: -5px;
                 margin: 0 0 0 10px;
                 
                 @media screen and (max-width: $break_lg){
+                    font-size: 8.5vw;
                     line-height: 85px;
                 }
                 @media screen and (max-width: $break_md){
@@ -114,10 +117,42 @@
         z-index: 20;
     }
     .slick-dots {
-        bottom: 150px;
+        bottom: 90px;
+        
+        @media screen and (max-width: $break_sm){
+            bottom: 90px;
+        }
     }
+    .slick-dots li {
+        margin: 0 20px;
+        
+        @media screen and (max-width: $break_sm){
+            width: 10px;
+            height: 10px;
+            margin: 0 10px;
+        }
+        
+        button {
+            background: $white;
+            border-radius: 50%;
+            
+            @media screen and (max-width: $break_sm){
+                width: 10px;
+                height: 10px;
+            }
+        
+            &:before {
+                content: "";
+            }
+        }
+    }
+    .slick-dots li.slick-active button {background: $electric-blue;}
     .slick-dotted.slick-slider {
         margin-bottom: 0;
+    }
+    button {
+        margin: 0;
+        position: static;
     }
 }
 
